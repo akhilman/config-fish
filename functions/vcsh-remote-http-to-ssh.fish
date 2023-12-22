@@ -1,18 +1,10 @@
-function vcsh-remote-http-to-ssh
-    set -l fish_trace on
-    set -l repo
-    set -l remote
-
-    if set -q argv[1]
-        set repo $argv[1]
-    else
+function vcsh-remote-http-to-ssh -a repo -a remote
+    if test -z "$repo"
         echo "Usage $(path basename (status filename)) <repo> [remote]"
         return 1
     end
 
-    if set -q argv[2]
-        set remote $argv[2]
-    else
+    if test -z "$remote"
         set remote origin
     end
 

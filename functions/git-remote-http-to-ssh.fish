@@ -1,11 +1,6 @@
-function git-remote-http-to-ssh
-    set -l remote
-
-    if set -q argv[1]
-        set remote $argv[1]
-    else
-        set remote origin
-    end
+function git-remote-http-to-ssh -a remote
+    test -z "$remote"
+        and set remote origin
 
     set -l url (git remote get-url $remote | string replace -r '^https?://([^/]+)/(.+)$' 'git@$1:$2')
         or return $status
