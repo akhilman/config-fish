@@ -1,6 +1,6 @@
 [submodule "site/fish-prompt-hline"]
 	path = site/fish-prompt-hline
-	url = https://codeberg.org/AkhIL/fish-prompt-hline.git
+	url = https://github.com/akhilman/fish-prompt-hline.git
 [submodule "site/bass"]
 	path = site/bass
 	url = https://github.com/edc/bass
