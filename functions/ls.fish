@@ -1,3 +1,3 @@
 function ls --description 'List contents of directory'
-	command ls --color=auto $argv
+    command ls --color=auto --hyperlink=auto $argv
 end
