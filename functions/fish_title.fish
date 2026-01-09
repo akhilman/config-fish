@@ -16,6 +16,6 @@ function fish_title
         set -a title "$argv"
     end
 
-    string join ' ' $title
+    echo $title
 
 end
