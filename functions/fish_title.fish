@@ -6,8 +6,8 @@ function fish_title
 
     set -l title
 
-    if not string match -q 'tmux*' $TERM
-        set title "$USER@$hostname:"
+    if not set -q TMUX
+        set title "$USER@$hostname"
     end
 
     if [ $_ = fish ]
@@ -16,6 +16,6 @@ function fish_title
         set -a title "$argv"
     end
 
-    echo $title
+    string join ' : ' $title
 
 end
