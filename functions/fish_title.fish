@@ -4,14 +4,18 @@
 
 function fish_title
 
-	set -l title
+    set -l title
 
-	if [ $_ = 'fish' ]
-		set title (prompt_pwd)
-	else
-		set title "$argv"
-	end
+    if not string match -q 'tmux*' $TERM
+        set title "$USER@$hostname:"
+    end
 
-	echo $title
+    if [ $_ = fish ]
+        set -a title (prompt_pwd)
+    else
+        set -a title "$argv"
+    end
+
+    string join ' ' $title
 
 end
