@@ -3,10 +3,7 @@
 submodules:
 	git submodule update --init
 
-colorscheme:
-	fish colorscheme.fish
+update: submodules
 
-update: submodules colorscheme
-
-install: submodules colorscheme
+install: submodules
 
